@@ -142,7 +142,7 @@ function expositio_scripts() {
 		wp_enqueue_script('comment-reply');
 	}
 
-	wp_enqueue_script('expositio-script', get_template_directory_uri().'/js/functions.js', array('jquery'), '20140321', true);
+	wp_enqueue_script('expositio-script', get_template_directory_uri().'/js/functions.js', array('jquery'), '20220203', true);
 }
 add_action('wp_enqueue_scripts', 'expositio_scripts');
 
