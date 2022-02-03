@@ -55,7 +55,7 @@ function fixLinks(items) {
 					}
 				}
 
-				var header_content_height = $('.site-title').height()
+					var header_content_height = $('.site-title').height()
 					+ fullHeight($('#primary-navigation')) + fullHeight(fixed.footer);
 				if (fixed.header.height() < header_content_height) {
 					fixed.header.height(header_content_height);
@@ -268,9 +268,10 @@ function fixLinks(items) {
 				} else {
 					load_effect.loader.show();
 					var href = $(this).attr('href');
-					$('.site').css('opacity', 0);
+                                        var target = $(this).prop('target') || '_self';
+					target === '_blank' || $('.site').css('opacity', 0);
 					setTimeout(function() {
-						window.location = href;
+						window.open(href, target)
 					}, load_effect.duration);
 				}
 			});
