@@ -85,6 +85,7 @@ endif;
  * Returns image tag
  */
 function expositio_image_tag($thumbnail_id, $size = 'post-thumbnail') {
+	if (wp_is_mobile()) { $size = 'medium_large'; }
 	$meta = wp_get_attachment_metadata($thumbnail_id);
 	if ($meta === false || $meta === '') {
 		return sprintf(
