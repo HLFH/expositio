@@ -112,31 +112,6 @@ function expositio_scripts() {
 
 	// Load our main stylesheet.
 	wp_enqueue_style('expositio-style', get_stylesheet_uri());
-	// Custom styles
-	if (is_admin_bar_showing()) {
-		$css = 'html {
-	height: -moz-calc(100% - 32px);
-	height: -webkit-calc(100% - 32px);
-	height: calc(100% - 32px);
-}
-
-@media (min-width: 951px) {
-	.site-header {
-		height: -moz-calc(100% - 32px);
-		height: -webkit-calc(100% - 32px);
-		height: calc(100% - 32px);
-	}
-}
-
-@media (max-width: 782px) {
-	html {
-		height: -moz-calc(100% - 46px);
-		height: -webkit-calc(100% - 46px);
-		height: calc(100% - 46px);
-	}
-}';
-		wp_add_inline_style('expositio-style', $css);
-	}
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
